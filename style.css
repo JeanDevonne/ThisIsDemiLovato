@@ -1,28 +1,63 @@
+:root{
+    --base: 15px;
+}
 body{
     box-sizing: border-box;
     margin: 0;
-    padding-top: 60px; 
+    font-size: var(--base);
 }
 .IPhone {
     position: relative;
     background: url(IPhone_X.png) center no-repeat;
-    /* background-size: cover; */
-    /* background-color: rgba(167, 19, 1, .2); */
-    text-align: center;
-    height: 730px;
-    width: 400px;
+    background-size: contain;
+    height: 45.6em;
+    width: 25em;
     padding: 0;
     margin: 0 auto;
+    margin-top: 5vh;
+    margin-bottom: 2vh;
+}
+/* wrap es un Hack para "aplicar" border radius al Iframe */
+.wrap {
+    position: relative;
+    height: 42.88em;
+    width: 19.88em;
+    top: 1.40em;
+    padding: 0;
+    margin: 0 auto;
+    -webkit-border-radius: 2em;
+    -moz-border-radius:2em;
+    border-radius: 2em;
+    overflow: hidden;
 }
 .iframe {
-    position: relative;
-    top: 26px;
-    padding: 0;
-    margin: 0;
-    border-radius: 30px;
+    height: 100%;
+    width: 100%;
 }
 .follow {
-    position: relative;
     text-align: center;
-    top: 50px;
+}
+@media only screen
+and (min-device-width: 320px)
+and (max-device-width: 480px)
+{
+    body {
+        margin: 0;
+        padding: 0;
+    }
+    .IPhone {
+        background: unset;
+        height: 100vh;
+        width: 100vw;
+        margin: 0;
+    }
+    .wrap {
+        top: 0px;
+        height: 100vh;
+        width: 100vw;
+        border-radius: 0px;
+    }
+    .follow {
+        display: none;
+    }
 }
